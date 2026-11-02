@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DoCheck, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck } from '@angular/core';
 import { ANode } from './a-node/a-node';
 
 @Component({

@@ -11,4 +11,8 @@ export class CNode implements DoCheck {
   ngDoCheck(): void {
     console.log('ngDoCheck c')
   }
+
+  protected onClick() {
+    console.log('click c node')
+  }
 }

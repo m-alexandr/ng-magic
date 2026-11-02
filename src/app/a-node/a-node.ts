@@ -11,17 +11,19 @@ import { BNode } from '../b-node/b-node';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ANode implements DoCheck {
-  ngDoCheck(): void {
-    console.log('ngDoCheck ANode ')
-  }
-  counterA = 0
+
+  counterA = 0;
 
   constructor() {
 
-    setInterval(()=> this.counterA = this.counterA  + 1, 1000)
+    setInterval(() => this.counterA = this.counterA + 1, 1000)
   }
 
-  protected clickmagic() {
+  ngDoCheck(): void {
+    console.log('ngDoCheck A')
+  }
+
+  protected clickMagic() {
     console.log('click a')
   }
 }
