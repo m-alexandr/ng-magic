@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, DoCheck, signal } from '@angular/core';
+import { ANode } from './a-node/a-node';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ANode],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {
-  protected readonly title = signal('ng20');
+export class App implements DoCheck {
+  ngDoCheck(): void {
+    console.log('ngDoCheck app')
+  }
+
+
+  protected clickMagic() {
+    console.log('clickMagic app')
+  }
 }
